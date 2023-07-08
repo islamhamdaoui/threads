@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
@@ -18,7 +20,7 @@
           <img src="search.png" alt="" />
         </div>
 
-        <div class="home">
+        <div onclick="addpost()" class="home">
           <img src="trend.png" alt="" />
         </div>
 
@@ -137,37 +139,39 @@
     <!-- New post code -->
     <div class="postscontainer">
       <div class="postsheader">
-       <div><img src="x.png" alt=""></div> 
+        <div onclick="cancel()"><img src="x.png" alt="" /></div>
         <p><b>New thread</b></p>
       </div>
 
       <div class="writepost">
-       
-        <div> <img src="islamputh.jpg" alt=""></div>
-     <div>
-      <p>islam.puth</p>
-   <input type="text" placeholder="Start a thread...">
-     </div>
+        <div><img src="islamputh.jpg" alt="" /></div>
+        <div>
+          <p>islam.puth</p>
+          <input type="text" placeholder="Start a thread..." />
+        </div>
       </div>
-      <div class="postmiddle">  <div class="linedown"></div>
-     <img src="import.png" alt="">
-    </div>
-    <div class="postanother">
-      <img src="islamputh.jpg" alt="">
-      <p>Add to thread</p>
-    </div>
+      <div class="postmiddle">
+        <div class="linedown"></div>
+        <img src="import.png" alt="" />
+      </div>
+      <div class="postanother">
+        <img src="islamputh.jpg" alt="" />
+        <p>Add to thread</p>
+      </div>
       <div class="postfooter">
         <p>Anyone can reply</p>
-        <p>Post</p>
+        <p onclick="postnow()">Post</p>
       </div>
     </div>
 
     <script>
+      let posts = document.querySelector(".postscontainer");
       let leftside = document.querySelector("#leftside");
       let rightside = document.querySelector("#rightside");
       let liner = document.querySelector(".liner");
       let threads = document.querySelector(".threads");
       let replies = document.querySelector(".replies");
+      let prof = document.querySelector(".profilecontainer");
       rightside.style.color = "#6c6c6c";
 
       function leftsideclick() {
@@ -205,13 +209,12 @@
         }
       }
       function done() {
-        
         let desc = document.querySelector(".descreptioncontainer");
-        desc.style.visibility='hidden'
-        desc.style.display= 'none'
+        desc.style.visibility = "hidden";
+        desc.style.display = "none";
         let bio = document.querySelector("#bio");
         let prof = document.querySelector(".profilecontainer");
-        prof.style.display='block'
+        prof.style.display = "block";
         let descreption = document.querySelector(".descreption");
         descreption.innerHTML = bio.value;
       }
@@ -221,8 +224,25 @@
         let prof = document.querySelector(".profilecontainer");
         prof.style.display = "none";
         desc.style.visibility = "visible";
-        desc.style.display='block'
-        
+        desc.style.display = "block";
+      }
+
+      function cancel() {
+        prof.style.display = "block";
+
+        posts.style.display = "none";
+      }
+
+      function addpost() {
+        prof.style.display = "none";
+
+        posts.style.display = "block";
+      }
+
+      function postnow() {
+        prof.style.display = "none";
+
+        posts.style.display = "block";
       }
     </script>
   </body>
