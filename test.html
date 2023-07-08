@@ -1,0 +1,25 @@
+<div id="container">
+  <img src="image1.jpg">
+  <img src="image2.jpg">
+  <button onclick="send()">Like</button>
+</div>
+<script>
+    function send(){
+
+    
+    // Create a new element
+var newElement = document.createElement("p");
+
+// Create text content for the new element
+var newText = document.createTextNode("This is a new paragraph.");
+
+// Append the text to the new element
+newElement.appendChild(newText);
+
+// Get a reference to the container div
+var container = document.getElementById("container");
+
+// Append the new element to the container
+container.appendChild(newElement);
+    }
+</script>

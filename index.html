@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="thread.css" />
+  </head>
+  <body>
+    <div class="profilecontainer">
+      <!--Navbar code-->
+      <div class="navbar">
+        <div class="home">
+          <img src="trend.png" alt="" />
+        </div>
+
+        <div class="home">
+          <img src="search.png" alt="" />
+        </div>
+
+        <div class="home">
+          <img src="trend.png" alt="" />
+        </div>
+
+        <div class="home">
+          <img src="like.png" alt="" />
+        </div>
+
+        <div class="home">
+          <img src="profile.png" alt="" />
+        </div>
+
+        <!--Header code-->
+      </div>
+      <div class="header">
+        <div class="left">
+          <img src="world.png" alt="" />
+        </div>
+        <div class="right">
+          <img src="insta.png" alt="" />
+          <img src="menu.png" alt="" />
+        </div>
+      </div>
+
+      <!--Profile Info Code-->
+      <div class="info">
+        <div class="first">
+          <div>
+            <div class="h1"><h1>islam puth</h1></div>
+            <div>
+              <p>islam.puth</p>
+              <div>threads.net</div>
+            </div>
+          </div>
+          <div><img class="profile" src="islamputh.jpg" alt="" /></div>
+        </div>
+        <div class="second"></div>
+        <p class="descreption">Descreption</p>
+        <div class="followers">
+          <div>
+            <img src="charlie.jpg" alt="" />
+            <img src="sofia.jpg" alt="" />
+          </div>
+          <p>19,892 followers</p>
+        </div>
+        <div class="buttons">
+          <div onclick="edit()">Edit profile</div>
+          <div>Share profile</div>
+        </div>
+      </div>
+      <!-- Posts Code -->
+      <div class="posts">
+        <div>
+          <div onclick="leftsideclick()" id="leftside">Threads</div>
+          <div onclick="rightsideclick()" id="rightside">Replies</div>
+        </div>
+        <div class="line">
+          <div class="liner"></div>
+        </div>
+      </div>
+      <div class="pages">
+        <div class="threads">
+          <p>No Threads yet</p>
+        </div>
+        <div class="replies">
+          <p>No replies yet</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="descreptioncontainer">
+      <div class="descheader">
+        <div>
+          <img src="x.png" alt="" />
+          <p>Edit profile</p>
+        </div>
+        <p class="done" onclick="done()">Done</p>
+      </div>
+      <div class="descbody">
+        <div class="inputs">
+          <div class="firstinp">
+            <div>
+              <label for=""><b>Name</b></label>
+              <p>islam puth (islam.puth)</p>
+            </div>
+            <img class="descimg" src="islamputh.jpg" alt="" />
+          </div>
+          <div class="bio">
+            <label for=""><b>Bio</b> <br /> </label>
+            <textarea
+              id="bio"
+              placeholder="Write a bio..."
+              id=""
+              cols="30"
+              rows="1"
+            ></textarea>
+          </div>
+          <div class="bio">
+            <label for=""><b>Link</b> <br /> </label>
+            <textarea
+              placeholder="+ Add link"
+              id=""
+              cols="30"
+              rows="1"
+            ></textarea>
+          </div>
+          <div class="private">
+            <p>Private Profile</p>
+            <div class="check" onclick="check()">
+              <div class="checked"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- New post code -->
+    <div class="postscontainer">
+      <div class="postsheader">
+       <div><img src="x.png" alt=""></div> 
+        <p><b>New thread</b></p>
+      </div>
+
+      <div class="writepost">
+       
+        <div> <img src="islamputh.jpg" alt=""></div>
+     <div>
+      <p>islam.puth</p>
+   <input type="text" placeholder="Start a thread...">
+     </div>
+      </div>
+      <div class="postmiddle">  <div class="linedown"></div>
+     <img src="import.png" alt="">
+    </div>
+    <div class="postanother">
+      <img src="islamputh.jpg" alt="">
+      <p>Add to thread</p>
+    </div>
+      <div class="postfooter">
+        <p>Anyone can reply</p>
+        <p>Post</p>
+      </div>
+    </div>
+
+    <script>
+      let leftside = document.querySelector("#leftside");
+      let rightside = document.querySelector("#rightside");
+      let liner = document.querySelector(".liner");
+      let threads = document.querySelector(".threads");
+      let replies = document.querySelector(".replies");
+      rightside.style.color = "#6c6c6c";
+
+      function leftsideclick() {
+        liner.style.transform = "translateX(0)";
+        rightside.style.color = "#6c6c6c";
+        leftside.style.color = "white";
+
+        replies.style.transform = "translateX(-100%)";
+        threads.style.transform = "translateX(0%)";
+        threads.style.width = "100%";
+        replies.style.width = "0";
+        threads.style.visibility = "visible";
+        replies.style.visibility = "hidden";
+      }
+      function rightsideclick() {
+        rightside.style.color = "white";
+        leftside.style.color = "#6c6c6c";
+        liner.style.transform = "translateX(100%)";
+
+        threads.style.transform = "translateX(100%)";
+        replies.style.transform = "translateX(0)";
+        threads.style.visibility = "hidden";
+        replies.style.visibility = "visible";
+        replies.style.width = "100%";
+
+        threads.style.width = "0";
+      }
+
+      function check() {
+        let checked = document.querySelector(".checked");
+        if (checked.style.transform === "translateX(90%)") {
+          checked.style.transform = "translateX(0)";
+        } else {
+          checked.style.transform = "translateX(90%)";
+        }
+      }
+      function done() {
+        
+        let desc = document.querySelector(".descreptioncontainer");
+        desc.style.visibility='hidden'
+        desc.style.display= 'none'
+        let bio = document.querySelector("#bio");
+        let prof = document.querySelector(".profilecontainer");
+        prof.style.display='block'
+        let descreption = document.querySelector(".descreption");
+        descreption.innerHTML = bio.value;
+      }
+
+      function edit() {
+        let desc = document.querySelector(".descreptioncontainer");
+        let prof = document.querySelector(".profilecontainer");
+        prof.style.display = "none";
+        desc.style.visibility = "visible";
+        desc.style.display='block'
+        
+      }
+    </script>
+  </body>
+</html>
